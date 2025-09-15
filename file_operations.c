@@ -20,6 +20,7 @@ printf("Creating file with content '%s'.\n", content);
     // TODO: Check if open() failed (fd == -1). If so, print an error using perror and return -1.
    if (fd == -1) {
 	   perror("ERROR: Could not open file");
+	   close(fd);
 	return -1;
    }
 
@@ -31,6 +32,7 @@ printf("File descripter value: %i\n", fd);
     // TODO: Check if write() failed (bytes_written == -1). If so, print an error using perror, close the file, and return -1.
 if (bytes_written == -1) {
 	perror("ERROR: Could not write to file");
+	close(fd0;
 	return -1;
 }
     // TODO: Print a success message with the number of bytes written and the filename.
@@ -62,6 +64,7 @@ int read_file_contents(const char *filename) {
     // TODO: Check if open() failed (fd == -1). If so, print an error using perror and return -1
     if (fd == -1) {
 	    perror("ERROR: Could not read file");
+	    close(fd);
 	    return -1;
     }
     // TODO: Print the file descriptor value.
@@ -79,6 +82,7 @@ printf("Starting file read:\n");
     // TODO: Check if read() failed (bytes_read == -1). If so, print an error using perror, close the file, and return -1.
 if (bytes_read== -1) {
 	perror("ERROR: Could not read file");
+	close(fd);
 	return -1;
 }
     // TODO: Print a footer for the end of the file.
